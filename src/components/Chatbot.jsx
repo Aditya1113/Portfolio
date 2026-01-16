@@ -38,7 +38,7 @@ const Chatbot = () => {
         content: msg.content,
       }));
 
-      const response = await fetch('http://localhost:5001/api/chat', {
+      const response = await fetch('https://career-assistant-ai-agent.onrender.com/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
