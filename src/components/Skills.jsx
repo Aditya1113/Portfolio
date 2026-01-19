@@ -52,8 +52,8 @@ const Skills = () => {
       <h2 className="text-4xl font-bold mb-12 gradient-text">Skills</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {skillCategories.map((category, index) => (
-          <div key={index} className="card">
-            <h3 className="text-xl font-semibold text-white mb-4">{category.category}</h3>
+          <div key={index} className="card text-left">
+            <h3 className="text-xl font-semibold text-white mb-4 text-center">{category.category}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill, idx) => (
                 <span

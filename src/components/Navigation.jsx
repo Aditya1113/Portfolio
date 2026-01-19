@@ -22,7 +22,7 @@ const Navigation = ({ activeSection }) => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold gradient-text">AM</h1>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -36,6 +36,13 @@ const Navigation = ({ activeSection }) => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="/Aditya_Mazumdar_Resume.pdf"
+              download
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 text-white"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>

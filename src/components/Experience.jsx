@@ -35,7 +35,7 @@ const Experience = () => {
       <h2 className="text-4xl font-bold mb-12 gradient-text">Experience</h2>
       <div className="max-w-4xl mx-auto space-y-8">
         {experiences.map((exp, index) => (
-          <div key={index} className="card">
+          <div key={index} className="card text-left">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
               <div>
                 <h3 className="text-2xl font-semibold text-blue-400">{exp.title}</h3>

@@ -3,7 +3,7 @@ const About = () => {
     <section id="about" className="section-container">
       <h2 className="text-4xl font-bold mb-8 gradient-text">About Me</h2>
       <div className="max-w-3xl mx-auto">
-        <div className="card">
+        <div className="card text-left">
           <p className="text-lg text-gray-300 leading-relaxed mb-4">
             I'm a Software Development Engineer specializing in cross-platform mobile development and
             AI-powered solutions. Currently pursuing my MSc in Computer Science at the University of Edinburgh.
