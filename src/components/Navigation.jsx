@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 const Navigation = ({ activeSection }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -15,6 +19,7 @@ const Navigation = ({ activeSection }) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -22,6 +27,8 @@ const Navigation = ({ activeSection }) => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold gradient-text">AM</h1>
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">
             {navItems.map((item) => (
               <button
@@ -42,6 +49,44 @@ const Navigation = ({ activeSection }) => {
               className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 text-white"
             >
               Resume
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+          <div className="flex flex-col space-y-4 py-4">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-left transition-colors duration-300 ${
+                  activeSection === item.id
+                    ? 'text-blue-400'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            <a
+              href="/Aditya_Mazumdar_Resume.pdf"
+              download
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 text-white text-center"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Download Resume
             </a>
           </div>
         </div>
