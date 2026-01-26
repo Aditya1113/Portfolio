@@ -36,7 +36,7 @@ const Contact = () => {
             <h3 className="text-lg font-semibold text-blue-400 group-hover:text-blue-300">
               Email
             </h3>
-            <p className="text-gray-400">aditya.mazumdar@outlook.com</p>
+            <p className="text-gray-400 break-words overflow-wrap-anywhere">aditya.mazumdar@outlook.com</p>
           </a>
           <a
             href="https://www.linkedin.com/in/aditya-mazumdar/"

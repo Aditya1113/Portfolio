@@ -44,6 +44,15 @@ const Navigation = ({ activeSection }) => {
               </button>
             ))}
             <a
+              href="https://medium.com/@aditya26.mam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
+              aria-label="Medium Blog"
+            >
+              Blog
+            </a>
+            <a
               href="/Aditya_Mazumdar_Resume.pdf"
               download
               className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 text-white"
@@ -80,6 +89,15 @@ const Navigation = ({ activeSection }) => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://medium.com/@aditya26.mam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-left text-gray-300 hover:text-white transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
+            </a>
             <a
               href="/Aditya_Mazumdar_Resume.pdf"
               download
